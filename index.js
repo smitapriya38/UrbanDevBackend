@@ -1,5 +1,6 @@
 // module imports
 const express = require("express");
+const cors = require("cors");
 const joiningRoute = require("./routes/joining.route");
 const trainingRoute = require("./routes/training.route");
 const salaryRoute = require("./routes/salary.route");
@@ -19,6 +20,10 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// cors policy for all requests
+app.use(cors());
+
+// main routes
 app.use("/joining-details", joiningRoute);
 app.use("/training-details", trainingRoute);
 app.use("/salary-details", salaryRoute);

@@ -1,12 +1,16 @@
+// module imports
 const mysql = require("mysql");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 // pool connection mysql
 const db = mysql.createPool({
-    port: 3306,
-    host: "localhost",
-    user: "root",
-    password: "@vishal1",
-    database: "urbandev",
+    port: process.env.PORT,
+    host: process.env.HOST,
+    user: process.env.USER,
+    password: process.env.PASSWORD,
+    database: process.env.DATABASE,
     connectionLimit: 10,
 });
 
