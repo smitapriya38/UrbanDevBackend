@@ -61,6 +61,7 @@ CREATE TABLE `appointmentdetails` (
 
 LOCK TABLES `appointmentdetails` WRITE;
 /*!40000 ALTER TABLE `appointmentdetails` DISABLE KEYS */;
+INSERT INTO `appointmentdetails` VALUES ('AP001','AD001','UD1001','Ramesh Singh','Shri Umesh Kumar Singh','8888999912','ramsn12@gmail.com','1990-06-20','male','married','general','hindu','Jharkhand','Ranchi','A-120, China Town, New Delhi-West','A-120, China Town, New Delhi-West','1400100023459087','APNG0450I',NULL,'2021-01-24','Appointed','employed',NULL);
 /*!40000 ALTER TABLE `appointmentdetails` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -73,4 +74,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-26 18:08:09
+-- Dump completed on 2021-05-27 23:24:44

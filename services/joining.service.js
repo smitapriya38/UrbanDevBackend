@@ -12,3 +12,16 @@ exports.joining_service_fill_info = (data, callBack) => {
         }
     );
 };
+
+exports.joining_service_get_info = (data, callBack) =>{
+    db.query(
+        `select * from joiningdetails`,
+        data,
+        (error, result)=>{
+            if(error){
+                callBack(error);
+            }
+            callBack(null, result);
+        }
+    );
+};

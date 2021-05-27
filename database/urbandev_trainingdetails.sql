@@ -23,14 +23,12 @@ DROP TABLE IF EXISTS `trainingdetails`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `trainingdetails` (
-  `empid` varchar(50) DEFAULT NULL,
+  `empid` varchar(50) NOT NULL,
   `ttype` varchar(30) NOT NULL,
   `startdate` date NOT NULL,
   `enddate` date NOT NULL,
   `totaldays` smallint(6) DEFAULT NULL,
-  `attendance` date NOT NULL,
-  KEY `emp_id` (`empid`),
-  CONSTRAINT `trainingdetails_ibfk_1` FOREIGN KEY (`empid`) REFERENCES `joiningdetails` (`empid`)
+  `attendance` smallint(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -40,6 +38,7 @@ CREATE TABLE `trainingdetails` (
 
 LOCK TABLES `trainingdetails` WRITE;
 /*!40000 ALTER TABLE `trainingdetails` DISABLE KEYS */;
+INSERT INTO `trainingdetails` VALUES ('UD1001','Online','2021-01-12','2021-02-12',32,25);
 /*!40000 ALTER TABLE `trainingdetails` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-26 18:08:08
+-- Dump completed on 2021-05-27 23:24:42

@@ -6,9 +6,22 @@ exports.apt_service_fill_info = (data, callBack) =>{
         Object.values(data),
         (error)=>{
             if(error){
-                return callBack(error);
+                callBack(error);
             }
-            return callBack(null, "Appointment details stored successfully");
+            callBack(null, "Appointment details stored successfully");
+        }
+    );
+};
+
+exports.apt_service_get_info = (data, callBack) =>{
+    db.query(
+        `select * from appointmentdetails`,
+        data,
+        (error, result)=>{
+            if(error){
+                callBack(error);
+            }
+            callBack(null, result);
         }
     );
 };

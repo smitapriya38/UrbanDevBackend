@@ -12,3 +12,16 @@ exports.salary_service_fill_info = (data, callBack)=>{
         }
     );
 };
+
+exports.salary_service_get_info = (data, callBack)=>{
+    db.query(
+        `select * from salarydetails`,
+        [],
+        (error, result)=>{
+            if(error){
+                return callBack(error);
+            }
+            return callBack(null, result); 
+        }
+    );
+};

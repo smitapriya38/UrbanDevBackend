@@ -6,6 +6,7 @@ const salaryRoute = require("./routes/salary.route");
 const adRoute = require("./routes/advertisement.route");
 const aptRoute = require("./routes/appointment.route");
 const transferRoute = require("./routes/transfer.route");
+const city = require("./routes/cities.route");
 
 // variables
 const port = 3000;
@@ -24,6 +25,7 @@ app.use("/salary-details", salaryRoute);
 app.use("/ad-details", adRoute);
 app.use("/apt-details", aptRoute);
 app.use("/transfer-details", transferRoute);
+app.use("/city", city);
 
 // starting server
 app.listen(port, ()=>{

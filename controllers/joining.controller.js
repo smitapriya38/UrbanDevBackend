@@ -27,3 +27,16 @@ exports.joining_controller_fill_info = (req, res) =>{
     });
 };
 
+exports.joining_controller_get_info = (req, res) =>{
+    const data = {};
+    joiningService.joining_service_get_info(data, (error, result)=>{
+        if(error){
+            console.log(error);
+            return res.status(400).send({success: 0, data: "Bad request"});
+        }
+        return res.status(201).send(result);
+    });
+};
+
+
+

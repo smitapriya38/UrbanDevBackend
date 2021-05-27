@@ -1,14 +1,14 @@
 const db = require("../config/db.config");
 
-exports.transfer_service_fill_info = (data, callBack) =>{
+exports.transfer_service_get_info = (data, callBack) =>{
     db.query(
-        `insert into transferdetails values (?, ?, ?, ?, ?, ?)`,
-        Object.values(data),
-        (error)=>{
+        `select * from transferdetails`,
+        data,
+        (error, result)=>{
             if(error){
                 return callBack(error);
             }
-            return callBack(null, "Transfer details stored successfully");
+            return callBack(null, result);
         }
     );
 };

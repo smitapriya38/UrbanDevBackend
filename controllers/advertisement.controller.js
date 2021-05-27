@@ -15,3 +15,14 @@ exports.ad_controller_fill_info = (req, res)=>{
         return res.status(201).send({success: 1, data: result});
     });
 };
+
+exports.ad_controller_get_info = (req, res)=>{
+    const data = {};
+    adService.ad_service_get_info(data, (error, result)=>{
+        if(error){
+            console.log(error);
+            return res.status(400).send({success: 0, data: "Bad request"});
+        }
+        return res.status(201).send({success: 1, data: result});
+    });
+};

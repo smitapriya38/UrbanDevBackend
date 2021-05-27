@@ -38,6 +38,7 @@ CREATE TABLE `advertisementdetails` (
 
 LOCK TABLES `advertisementdetails` WRITE;
 /*!40000 ALTER TABLE `advertisementdetails` DISABLE KEYS */;
+INSERT INTO `advertisementdetails` VALUES ('AD001','2020-12-25','Human Resources',NULL),('AD002','2020-12-25','Sales','This position is for sales executive. Please go through the qualification.');
 /*!40000 ALTER TABLE `advertisementdetails` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-26 18:08:09
+-- Dump completed on 2021-05-27 23:24:43

@@ -12,3 +12,17 @@ exports.training_service_fill_info = (data, callBack) =>{
         }
     );
 };
+
+
+exports.training_service_get_info = (data, callBack) =>{
+    db.query(
+        `select * from trainingdetails`,
+        [],
+        (error, result)=>{
+            if(error){
+                return callBack(error);
+            }
+            return callBack(null, result);
+        }
+    );
+};

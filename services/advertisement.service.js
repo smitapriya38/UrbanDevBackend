@@ -12,3 +12,16 @@ exports.ad_service_fill_info = (data, callBack)=>{
         }
     );
 };
+
+exports.ad_service_get_info = (data, callBack)=>{
+    db.query(
+        `select * from advertisementdetails`,
+        data,
+        (error, result)=>{
+            if(error){
+                return callBack(error);
+            }
+            return callBack(null, result);
+        }
+    );
+};
