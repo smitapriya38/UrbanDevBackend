@@ -25,3 +25,35 @@ exports.joining_service_get_info = (data, callBack) =>{
         }
     );
 };
+
+exports.joining_service_get_emp_info = (data, callBack) =>{
+    db.query(
+        `select empid from joiningdetails`,
+        data,
+        (error, result)=>{
+            if(error){
+               return callBack(error);
+            }
+            return callBack(null, result);
+        }
+    );
+};
+
+exports.joining_service_delete_info = (data, callBack) =>{
+    db.query(
+        `delete from salarydetails where empid=?`,
+        Object.values(data),
+        (error, result)=>{
+            if(error){
+                console.log("Here1");
+                return callBack(error);
+            }
+            if(result.affectedRows===1)
+                return callBack(null, "Row(s) successfully deleted");
+            else{
+                console.log("Here2");
+                return callBack(new Error("Not a valid id was provided"));
+            }
+        }
+    );
+};

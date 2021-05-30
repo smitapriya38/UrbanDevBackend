@@ -38,5 +38,29 @@ exports.joining_controller_get_info = (req, res) =>{
     });
 };
 
+exports.joining_controller_get_emp_info = (req, res) =>{
+    const data = {};
+    joiningService.joining_service_get_emp_info(data, (error, result)=>{
+        if(error){
+            console.log(error);
+            return res.status(400).send({success: 0, data: "Bad request"});
+        }
+        return res.status(201).send(result);
+    });
+};
+
+exports.joining_controller_delete_info = (req, res) =>{
+    const data = {
+        empid: req.body.empid
+    };
+    joiningService.joining_service_delete_info(data, (error, result)=>{
+        if(error){
+            console.log(error);
+            return res.status(400).send({success: 0, data: "Bad request"});
+        }
+        return res.status(201).send(result);
+    });
+};
+
 
 

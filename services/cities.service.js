@@ -6,9 +6,9 @@ exports.city_service_get_info = (data, callBack) =>{
         data,
         (error, result)=>{
             if(error){
-                callBack(error);
+                return callBack(error);
             }
-            callBack(null, result);
+            return callBack(null, result);
         }
     );
 };

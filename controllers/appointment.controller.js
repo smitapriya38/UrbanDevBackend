@@ -1,10 +1,11 @@
 const aptService = require("../services/appointment.service");
+const uuid = require("uuid");
 
 exports.apt_controller_fill_info = (req, res)=>{
     const data = {
+        empid: uuid.v4(),
         apt_order_no: req.body.apt_order_no,
         ad_letter_no: req.body.ad_letter_no,
-        empid: req.body.empid,
         ename: req.body.ename,
         father_name: req.body.father_name,
         contact: req.body.contact,
@@ -16,16 +17,20 @@ exports.apt_controller_fill_info = (req, res)=>{
         religion: req.body.religion,
         home_state: req.body.home_state,
         home_district: req.body.home_district,
-        present_address: req.body.present_address,
         permanent_address: req.body.permanent_address,
+        present_address: req.body.present_address,
         aadhaar: req.body.aadhaar,
-        pan: req.body.pan,
         experience: req.body.experience,
         apt_order_date: req.body.apt_order_date,
         apt_status: req.body.apt_status,
+        apt_date: req.body.apt_date,
         emp_type: req.body.emp_type,
-        designation: req.body.designation
+        designation: req.body.designation,
+        create_date: req.body.create_date,
+        updated_date: req.body.updated_date,
+        pan: req.body.pan
     };
+    console.log(Object.values(data).length);
     aptService.apt_service_fill_info(data, (error, result)=>{
         if(error){
             console.log(error);
